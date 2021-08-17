@@ -28,7 +28,7 @@ public class Homework01 {
         }
         System.out.println("Source array: ");
         printArray(list);
-        Homework01.bubbleSort(list);
+        bubbleSort(list);
         System.out.println("Sorted array: ");
         printArray(list);
     }
