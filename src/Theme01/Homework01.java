@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Homework01 {
-//  1 •	Написать сортировку пузырьком или бинарный поиск элемента в массиве.
+    //  1 •	Написать сортировку пузырьком или бинарный поиск элемента в массиве.
     static void bubbleSort(ArrayList<Integer> arrayList) {
         for (int i = arrayList.size() - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
@@ -53,9 +53,14 @@ public class Homework01 {
         double tempC;
         String scaleType;
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the type of scale yor need (F or K): ");
+        scaleType = scanner.nextLine().toUpperCase();
+        if (!scaleType.equals("F") && !scaleType.equals("K")) {
+            System.out.println("Wrong input");
+            smartConvertor();
+            System.exit(100);
+        }
         try {
-            System.out.println("Enter the type of scale yor need (F or K): ");
-            scaleType = scanner.nextLine().toUpperCase();
             System.out.println("Enter the temperature in Celsius: ");
             tempC = Double.parseDouble(scanner.nextLine());
             System.out.println("The result is: ");
