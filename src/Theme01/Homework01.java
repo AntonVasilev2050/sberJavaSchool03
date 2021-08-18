@@ -2,6 +2,7 @@ package Theme01;
 
 import java.util.ArrayList;
 
+//•	Написать сортировку пузырьком или бинарный поиск элемента в массиве.
 public class Homework01 {
     static ArrayList<Integer> bubbleSort(ArrayList<Integer> arrayList) {
         for (int i = arrayList.size() - 1; i > 0; i--) {
@@ -23,6 +24,10 @@ public class Homework01 {
         System.out.println();
     }
 
+//    или бинарный поиск элемента в массиве.
+//    в разработке)
+
+    //Демонстрация
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i : new int[]{5, -1, -33, 33, 10, 100, 100, 67, 0, 331, -90, 0, 22, 1}) {
