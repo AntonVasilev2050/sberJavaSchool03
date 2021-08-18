@@ -3,9 +3,9 @@ package Theme01;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//1 •	Написать сортировку пузырьком или бинарный поиск элемента в массиве.
 public class Homework01 {
-    static ArrayList<Integer> bubbleSort(ArrayList<Integer> arrayList) {
+//  1 •	Написать сортировку пузырьком или бинарный поиск элемента в массиве.
+    static void bubbleSort(ArrayList<Integer> arrayList) {
         for (int i = arrayList.size() - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (arrayList.get(j) > arrayList.get(j + 1)) {
@@ -15,7 +15,6 @@ public class Homework01 {
                 }
             }
         }
-        return arrayList;
     }
 
     static void printArray(ArrayList<Integer> list) {
@@ -25,13 +24,15 @@ public class Homework01 {
         System.out.println();
     }
 
-/*    или бинарный поиск элемента в массиве.
-    в разработке)*/
+    /*    или бинарный поиск элемента в массиве.
+            в разработке)
+    */
 
 
-/*     2   •	Реализовать конвертеры температуры.
+    /*  2   •	Реализовать конвертеры температуры.
     Считаем, что значения будут поступать по шкале Цельсия,
-    конвертеры должны преобразовывать значение в свою шкалу.*/
+    конвертеры должны преобразовывать значение в свою шкалу.
+    */
     static double converter(double tempC, String scaleType) {
         double result = 0;
         switch (scaleType) {
@@ -67,7 +68,7 @@ public class Homework01 {
 
     //Демонстрация
     public static void main(String[] args) {
-//    1.
+//      1.
         ArrayList<Integer> list = new ArrayList<>();
         for (int i : new int[]{5, -1, -33, 33, 10, 100, 100, 67, 0, 331, -90, 0, 22, 1}) {
             list.add(i);
@@ -78,7 +79,7 @@ public class Homework01 {
         System.out.println("Sorted array: ");
         printArray(list);
 
-//        2.
+//      2.
         smartConvertor();
     }
 
