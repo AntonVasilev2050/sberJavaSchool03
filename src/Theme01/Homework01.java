@@ -1,8 +1,9 @@
 package Theme01;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
-//•	Написать сортировку пузырьком или бинарный поиск элемента в массиве.
+//1 •	Написать сортировку пузырьком или бинарный поиск элемента в массиве.
 public class Homework01 {
     static ArrayList<Integer> bubbleSort(ArrayList<Integer> arrayList) {
         for (int i = arrayList.size() - 1; i > 0; i--) {
@@ -28,22 +29,37 @@ public class Homework01 {
 //    в разработке)
 
 
-    //    •	Реализовать конвертеры температуры.
+    // 2   •	Реализовать конвертеры температуры.
 //    Считаем, что значения будут поступать по шкале Цельсия,
 //    конвертеры должны преобразовывать значение в свою шкалу.
-    static double converter(double tempC, char scaleType) {
+    static double converter(double tempC, String scaleType) {
         double result = 0;
         switch (scaleType) {
-            case 'F': {
+            case "F":
+            case "f": {
                 result = tempC * 1.8 + 32;
                 break;
             }
-            case 'K': {
+            case "K":
+            case "k": {
                 result = tempC + 273.15;
                 break;
             }
         }
         return result;
+    }
+
+    static void smartConvertor() {
+        System.out.println("\nConvertor C -> F, K demo");
+        double tempC;
+        String scaleType;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the type of scale yor need (F or K): ");
+        scaleType = scanner.nextLine().toUpperCase();
+        System.out.println("Enter the temperature in Celsius: ");
+        tempC = scanner.nextDouble();
+        System.out.println("The result is: ");
+        System.out.println(Math.round(10 * converter(tempC, scaleType)) / 10.0 + "\u00B0" +scaleType);
     }
 
     //Демонстрация
@@ -59,7 +75,7 @@ public class Homework01 {
         printArray(list);
 
 //        2.
-        System.out.println(converter(-270, 'K'));
+        smartConvertor();
     }
 
 }
