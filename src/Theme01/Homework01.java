@@ -25,23 +25,21 @@ public class Homework01 {
         System.out.println();
     }
 
-//    или бинарный поиск элемента в массиве.
-//    в разработке)
+/*    или бинарный поиск элемента в массиве.
+    в разработке)*/
 
 
-    // 2   •	Реализовать конвертеры температуры.
-//    Считаем, что значения будут поступать по шкале Цельсия,
-//    конвертеры должны преобразовывать значение в свою шкалу.
+/*     2   •	Реализовать конвертеры температуры.
+    Считаем, что значения будут поступать по шкале Цельсия,
+    конвертеры должны преобразовывать значение в свою шкалу.*/
     static double converter(double tempC, String scaleType) {
         double result = 0;
         switch (scaleType) {
-            case "F":
-            case "f": {
+            case "F": {
                 result = tempC * 1.8 + 32;
                 break;
             }
-            case "K":
-            case "k": {
+            case "K": {
                 result = tempC + 273.15;
                 break;
             }
@@ -54,16 +52,22 @@ public class Homework01 {
         double tempC;
         String scaleType;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the type of scale yor need (F or K): ");
-        scaleType = scanner.nextLine().toUpperCase();
-        System.out.println("Enter the temperature in Celsius: ");
-        tempC = scanner.nextDouble();
-        System.out.println("The result is: ");
-        System.out.println(Math.round(10 * converter(tempC, scaleType)) / 10.0 + "\u00B0" +scaleType);
+        try {
+            System.out.println("Enter the type of scale yor need (F or K): ");
+            scaleType = scanner.nextLine().toUpperCase();
+            System.out.println("Enter the temperature in Celsius: ");
+            tempC = Double.parseDouble(scanner.nextLine());
+            System.out.println("The result is: ");
+            System.out.println(Math.round(10 * converter(tempC, scaleType)) / 10.0 + "\u00B0" + scaleType);
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong input! Try again! ");
+            smartConvertor();
+        }
     }
 
     //Демонстрация
     public static void main(String[] args) {
+//    1.
         ArrayList<Integer> list = new ArrayList<>();
         for (int i : new int[]{5, -1, -33, 33, 10, 100, 100, 67, 0, 331, -90, 0, 22, 1}) {
             list.add(i);
