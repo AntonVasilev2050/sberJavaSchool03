@@ -1,6 +1,7 @@
 package Theme01;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Homework01 {
@@ -83,6 +84,7 @@ public class Homework01 {
         bubbleSort(list);
         System.out.println("Sorted array: ");
         printArray(list);
+        System.out.println("index of 0 is: " + Collections.binarySearch(list, 0));
 
 //      2.
         smartConvertor();
