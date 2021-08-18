@@ -27,6 +27,25 @@ public class Homework01 {
 //    или бинарный поиск элемента в массиве.
 //    в разработке)
 
+
+    //    •	Реализовать конвертеры температуры.
+//    Считаем, что значения будут поступать по шкале Цельсия,
+//    конвертеры должны преобразовывать значение в свою шкалу.
+    static double converter(double tempC, char scaleType) {
+        double result = 0;
+        switch (scaleType) {
+            case 'F': {
+                result = tempC * 1.8 + 32;
+                break;
+            }
+            case 'K': {
+                result = tempC + 273.15;
+                break;
+            }
+        }
+        return result;
+    }
+
     //Демонстрация
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -38,6 +57,9 @@ public class Homework01 {
         bubbleSort(list);
         System.out.println("Sorted array: ");
         printArray(list);
+
+//        2.
+        System.out.println(converter(-270, 'K'));
     }
 
 }
