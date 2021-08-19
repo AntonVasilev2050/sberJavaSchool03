@@ -63,7 +63,7 @@ public class Homework01 {
         }
         try {
             System.out.println("Enter the temperature in Celsius: ");
-            tempC = Double.parseDouble(scanner.nextLine());
+            tempC = Double.parseDouble(scanner.nextLine().replaceAll("[.,юб]", "."));
             System.out.println("The result is: ");
             System.out.println(Math.round(10 * converter(tempC, scaleType)) / 10.0 + "\u00B0" + scaleType);
         } catch (NumberFormatException e) {
