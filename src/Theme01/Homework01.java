@@ -54,17 +54,16 @@ public class Homework01 {
         double tempC;
         String scaleType;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the type of scale yor need (F or K): ");
+        System.out.print("Enter the type of scale yor need (F or K): ");
         scaleType = scanner.nextLine().toUpperCase();
-        if (!scaleType.equals("F") && !scaleType.equals("K")) {
-            System.out.println("Wrong input");
-            smartConvertor();
-            System.exit(100);
+        while (!scaleType.equals("F") && !scaleType.equals("K")){
+            System.out.print("Wrong input, type F or K: ");
+            scaleType = scanner.nextLine().toUpperCase();
         }
         try {
-            System.out.println("Enter the temperature in Celsius: ");
+            System.out.print("Enter the temperature in Celsius: ");
             tempC = Double.parseDouble(scanner.nextLine().replaceAll("[.,юб]", "."));
-            System.out.println("The result is: ");
+            System.out.print("The result is: ");
             System.out.println(Math.round(10 * converter(tempC, scaleType)) / 10.0 + "\u00B0" + scaleType);
         } catch (NumberFormatException e) {
             System.out.println("Wrong input! Try again! ");
