@@ -32,7 +32,7 @@ public class MyFileOperator {
         }
         return list;
     }
-
+//  Задание 1: Подсчитайте количество различных слов в файле.
     public static int wordCount(String fileName) {
         List<String> list = load(fileName);
         Set<String> set = new TreeSet<>();
@@ -47,6 +47,7 @@ public class MyFileOperator {
         return set.size();
     }
 
+//  Задание 2: Выведите на экран список различных слов файла, отсортированный по возрастанию их длины
     public static void printSortedByLength(String fileName) {
         List<String> list = load(fileName);
         Set<String> set = new TreeSet<>();
@@ -64,6 +65,7 @@ public class MyFileOperator {
         listOfWords.forEach(System.out::println);
     }
 
+//  Задание 3: Подсчитайте и выведите на экран сколько раз каждое слово встречается в файле.
     public static void printWordFrequency(String fileName) {
         List<String> list = load(fileName);
         ArrayList<String> listOfWords = new ArrayList<>();
@@ -81,6 +83,7 @@ public class MyFileOperator {
         }
     }
 
+//  Задание 4: Выведите на экран все строки файла в обратном порядке.
     public static void printReversedStrings(String fileName) {
         List<String> list = load(fileName);
         for (String l : list) {
@@ -99,6 +102,7 @@ public class MyFileOperator {
         reversedList.forEach(System.out::println);
     }
 
+//  Задание 6: Выведите на экран строки, номера которых задаются пользователем в произвольном порядке.
     public static void printLineByNumber(String fileName){
         List<String> list = load(fileName);
         Scanner scanner = new Scanner(System.in);
@@ -139,7 +143,6 @@ public class MyFileOperator {
         for (String l: new ReverseIterator<String>(list)){
             System.out.println(l);
         }
-
 
         printLineByNumber(fileName);
     }
