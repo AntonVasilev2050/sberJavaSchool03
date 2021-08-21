@@ -1,5 +1,5 @@
 package Theme02.Task1To6;
-
+// Got this from: https://askdev.ru/q/iteraciya-po-spisku-v-obratnom-poryadke-v-java-dublikat-7532/
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
