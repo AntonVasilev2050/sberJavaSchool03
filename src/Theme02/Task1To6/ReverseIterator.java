@@ -29,10 +29,10 @@ public class ReverseIterator<T> implements Iterator<String>, Iterable<String> {
         return list.get(position--);
     }
 
-    @Override
-    public void remove() {
-        throw new UnsupportedOperationException();
-    }
+//    @Override
+//    public void remove() {
+//        throw new UnsupportedOperationException();
+//    }
 
 //    public static void main(String[] args) {
 //        List<String> list = new ArrayList<String>();
