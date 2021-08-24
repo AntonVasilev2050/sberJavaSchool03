@@ -30,12 +30,19 @@ public class CollectionUtils {
         removeFrom.removeAll(c2);
     }
 
-//    public static boolean containsAll(List c1, List c2) {
-//    }
-//
-//    public static boolean containsAny(List c1, List c2) {
-//    }
-//
+    public static <T>boolean containsAll(List<T> c1, List<T> c2) {
+        return c1.containsAll(c2);
+    }
+
+    public static <T> boolean containsAny(List<T> c1, List<T> c2) {
+        for (T t: c2){
+           if(c1.contains(t)){
+               return true;
+           }
+        }
+        return false;
+    }
+
 //    public static List range(List list, Object min, Object max) {
 //    }
 //
@@ -66,6 +73,12 @@ public class CollectionUtils {
         System.out.println(list);
         removeAll(list, listFirst);
         System.out.println(list);
+
+        System.out.println(containsAny(listFirst, list));
+        add(list, "3");
+        System.out.println(containsAny(listFirst, list));
+        list.remove("3");
+        System.out.println(containsAny(listFirst, list));
     }
 }
 
