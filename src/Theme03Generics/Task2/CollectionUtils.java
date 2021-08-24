@@ -58,14 +58,25 @@ public class CollectionUtils {
     //Возвращает лист, содержащий элементы из входного листа в диапазоне от min до max.
 // Элементы сравнивать через Comparable.
 // Прмер range(Arrays.asList(8,1,3,5,6, 4), 3, 6) вернет {3,4,5,6}
-    public static <T extends Comparable<T>> List<T> range(List<T> list, T min, T max, Comparator<T> comparator) {
+//    public static <T extends Comparable<T>> List<T> range(List<T> list, T min, T max, Comparator<T> comparator) {
+//        List<T> result = newArrayList();
+//        for (T t : list) {
+//            if (t.compareTo(min) >= 0 && t.compareTo(max) <= 0) {
+//                result.add(t);
+//            }
+//        }
+//        result.sort(comparator);
+//        return result;
+//    }
+
+    public static <T> List<T> range(List<T> list, T min, T max, Comparator<T> comparator) {
         List<T> result = newArrayList();
         for (T t : list) {
-            if (t.compareTo(min) >= 0 && t.compareTo(max) <= 0) {
+            if (comparator.compare(t, min) >= 0 && comparator.compare(t, max) <= 0) {
                 result.add(t);
             }
         }
-        result.sort(comparator);
+//        result.sort(comparator);
         return result;
     }
 
