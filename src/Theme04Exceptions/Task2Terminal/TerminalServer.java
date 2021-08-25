@@ -32,9 +32,9 @@ public class TerminalServer {
                 }
                 if (!tenSecsGone(startTime)) {
                     long timeToWait = (waitFor - (System.currentTimeMillis() - startTime)) / 1000;
-                    System.out.println("Подождите: " + timeToWait + " секунд");
+                    ShowMessage.waitTime(timeToWait);
                     try {
-                        Thread.currentThread().sleep(timeToWait);
+                        Thread.currentThread().sleep(timeToWait * 1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -46,7 +46,32 @@ public class TerminalServer {
 
     double getAccountBalance(int pin) {
         return accounts.get(pin);
+    }
 
+    void deposit(int pin, double amount) {
+        if (amount % 100 == 0 && amount > 0) {
+            double balance = getAccountBalance(pin);
+            accounts.put(pin, balance + amount);
+            balance = getAccountBalance(pin);
+            ShowMessage.showBalance(balance);
+        } else {
+            ShowMessage.wrongAmount();
+        }
+    }
+
+    void withdraw(int pin, double amount) {
+        if (amount % 100 == 0 && amount > 0) {
+            double balance = getAccountBalance(pin);
+            if (balance >= amount) {
+                balance -= amount;
+                accounts.put(pin, balance);
+                ShowMessage.showBalance(balance);
+            } else {
+                ShowMessage.notEnough();
+            }
+        } else {
+            ShowMessage.wrongAmount();
+        }
     }
 
     boolean tenSecsGone(long startTime) {

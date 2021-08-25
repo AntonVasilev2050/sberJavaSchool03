@@ -20,7 +20,9 @@ public class TerminalImp {
             accExists = terminalServer.accountExists(pin);
             System.out.println("account exists: " + accExists);
         } while (!accExists);
-        System.out.println("Welcome!");
-
+        ShowMessage.welcome();
+        System.out.println(terminalServer.getAccountBalance(pin));
+        terminalServer.deposit(pin, 200);
+        terminalServer.withdraw(pin, 70000);
     }
 }

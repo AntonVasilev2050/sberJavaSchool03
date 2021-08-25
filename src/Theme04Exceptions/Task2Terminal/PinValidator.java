@@ -9,16 +9,15 @@ public class PinValidator {
         pin = 0;
         String s;
         Scanner scanner = new Scanner(System.in);
-        ShowMessage message = new ShowMessage();
         s = scanner.nextLine();
         while (s.length() != 4) {
-            message.wrongPinLength();
+            ShowMessage.wrongPinLength();
             s = scanner.nextLine();
         }
         try {
             pin = Integer.parseInt(s);
         } catch (NumberFormatException e) {
-            message.wrongPinSymbols();
+            ShowMessage.wrongPinSymbols();
         }
 //        scanner.close();
         return pin;
