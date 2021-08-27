@@ -1,9 +1,10 @@
 package Theme04Exceptions.Task2Terminal;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class TerminalServer {
-    Map<Integer, Double> accounts;
+    ArrayList<User> users = User.getUsers();
     int attempt = 1;
     boolean isBlocked = false;
     long startTime = 0;
@@ -13,8 +14,8 @@ public class TerminalServer {
         System.out.println("attempt: " + attempt);
         if (attempt <= 3 && !isBlocked) {
             attempt++;
-            for (Integer a : accounts.keySet()) {
-                if (a == pin) {
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getPin() == pin) {
                     attempt = 0;
                     return true;
                 }
@@ -29,10 +30,11 @@ public class TerminalServer {
             if (isBlocked) {
                 if (tenSecsGone(startTime)) {
                     isBlocked = false;
+
                 }
                 if (!tenSecsGone(startTime)) {
                     long timeToWait = (waitFor - (System.currentTimeMillis() - startTime)) / 1000;
-                    ShowMessage.waitTime(timeToWait);
+                    UI.waitTime(timeToWait);
                     try {
                         Thread.currentThread().sleep(timeToWait * 1000);
                     } catch (InterruptedException e) {
@@ -45,32 +47,51 @@ public class TerminalServer {
     }
 
     double getAccountBalance(int pin) {
-        return accounts.get(pin);
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getPin() == pin) {
+                return users.get(i).getBalance();
+            }
+        }
+        UI.userNotFound();
+        return 0;
     }
 
     void deposit(int pin, double amount) {
+        double balance;
         if (amount % 100 == 0 && amount > 0) {
-            double balance = getAccountBalance(pin);
-            accounts.put(pin, balance + amount);
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getPin() == pin) {
+                    balance = users.get(i).getBalance();
+                    users.get(i).setBalance(balance + amount);
+                }
+            }
+            User.setUsers(users);
             balance = getAccountBalance(pin);
-            ShowMessage.showBalance(balance);
+            UI.showBalance(balance);
         } else {
-            ShowMessage.wrongAmount();
+            UI.wrongAmount();
         }
     }
 
     void withdraw(int pin, double amount) {
+        double balance;
         if (amount % 100 == 0 && amount > 0) {
-            double balance = getAccountBalance(pin);
+            balance = getAccountBalance(pin);
             if (balance >= amount) {
-                balance -= amount;
-                accounts.put(pin, balance);
-                ShowMessage.showBalance(balance);
+                for (int i = 0; i < users.size(); i++) {
+                    if (users.get(i).getPin() == pin) {
+                        System.out.println("b " + balance + " a " + amount);
+                        users.get(i).setBalance(balance - amount);
+                    }
+                }
+                User.setUsers(users);
+                balance = getAccountBalance(pin);
+                UI.showBalance(balance);
             } else {
-                ShowMessage.notEnough();
+                UI.notEnough();
             }
         } else {
-            ShowMessage.wrongAmount();
+            UI.wrongAmount();
         }
     }
 

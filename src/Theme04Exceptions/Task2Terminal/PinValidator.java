@@ -1,5 +1,7 @@
 package Theme04Exceptions.Task2Terminal;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Scanner;
 
 public class PinValidator {
@@ -11,15 +13,14 @@ public class PinValidator {
         Scanner scanner = new Scanner(System.in);
         s = scanner.nextLine();
         while (s.length() != 4) {
-            ShowMessage.wrongPinLength();
+            UI.wrongPinLength();
             s = scanner.nextLine();
         }
         try {
             pin = Integer.parseInt(s);
         } catch (NumberFormatException e) {
-            ShowMessage.wrongPinSymbols();
+            UI.wrongPinSymbols();
         }
-//        scanner.close();
         return pin;
     }
 

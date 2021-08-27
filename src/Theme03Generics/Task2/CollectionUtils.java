@@ -12,7 +12,7 @@ public class CollectionUtils {
         return new <T>ArrayList<T>();
     }
 
-    public static <T> int indexOf(List<T> source, T t) {
+    public static <T> int indexOf(List<? extends T> source, T t) {
         return source.indexOf(t);
     }
 
@@ -28,11 +28,11 @@ public class CollectionUtils {
         removeFrom.removeAll(c2);
     }
 
-    public static <T> boolean containsAll(List<T> c1, List<T> c2) {
+    public static <T> boolean containsAll(List<? super T> c1, List<? extends T> c2) {
         return c1.containsAll(c2);
     }
 
-    public static <T> boolean containsAny(List<T> c1, List<T> c2) {
+    public static <T> boolean containsAny(List<? extends T> c1, List<T> c2) {
         for (T t : c2) {
             if (c1.contains(t)) {
                 return true;
@@ -44,7 +44,7 @@ public class CollectionUtils {
     //Возвращает лист, содержащий элементы из входного листа в диапазоне от min до max.
 // Элементы сравнивать через Comparable.
 // Прмер range(Arrays.asList(8,1,3,5,6, 4), 3, 6) вернет {3,4,5,6}
-    public static <T extends Comparable<T>> List<T> range(List<T> list, T min, T max) {
+    public static <T extends Comparable<T>> List<T> range(List<? extends T> list, T min, T max) {
         List<T> result = newArrayList();
         for (T t : list) {
             if (t.compareTo(min) >= 0 && t.compareTo(max) <= 0) {
@@ -59,7 +59,7 @@ public class CollectionUtils {
     //Возвращает лист, содержащий элементы из входного листа в диапазоне от min до max.
 // Элементы сравнивать через Comparable.
 // Прмер range(Arrays.asList(8,1,3,5,6, 4), 3, 6) вернет {3,4,5,6}
-    public static <T> List<T> range(List<T> list, T min, T max, Comparator<T> comparator) {
+    public static <T> List<T> range(List<T> list, T min, T max, Comparator<? super T> comparator) {
         List<T> result = newArrayList();
         for (T t : list) {
             if (comparator.compare(t, min) >= 0 && comparator.compare(t, max) <= 0) {
