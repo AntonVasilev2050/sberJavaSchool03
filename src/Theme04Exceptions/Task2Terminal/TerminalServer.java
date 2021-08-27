@@ -1,7 +1,6 @@
 package Theme04Exceptions.Task2Terminal;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class TerminalServer {
     ArrayList<User> users = User.getUsers();

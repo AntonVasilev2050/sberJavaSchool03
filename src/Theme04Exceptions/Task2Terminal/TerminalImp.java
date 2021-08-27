@@ -8,7 +8,6 @@ import java.awt.event.KeyListener;
 
 public class TerminalImp {
     public static void main(String[] args) {
-        PinValidator pinValidator = new PinValidator();
         TerminalServer terminalServer = new TerminalServer();
         StringBuilder pinStr = new StringBuilder();
         int pin;
