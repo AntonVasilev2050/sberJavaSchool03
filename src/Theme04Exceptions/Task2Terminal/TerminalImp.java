@@ -27,7 +27,7 @@ public class TerminalImp {
         }while (!accExists);
         UI.welcome();
         System.out.println(terminalServer.getAccountBalance(pin));
-        terminalServer.deposit(pin, 300);
-        terminalServer.withdraw(pin, 1000);
+        terminalServer.deposit(pin, 500);
+        terminalServer.withdraw(pin, 10000);
     }
 }

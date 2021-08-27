@@ -74,7 +74,6 @@ public class TerminalServer {
             if (balance >= amount) {
                 for (int i = 0; i < users.size(); i++) {
                     if (users.get(i).getPin() == pin) {
-                        System.out.println("b " + balance + " a " + amount);
                         users.get(i).setBalance(balance - amount);
                     }
                 }

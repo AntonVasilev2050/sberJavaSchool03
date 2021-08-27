@@ -84,11 +84,8 @@ public class UI {
         System.out.println("Вы ввели недопустимый символ.");
     }
 
-    static void wrongPinLength() {
-        System.out.println("Ошибка ввода. Длинна PIN четыре цифры.");
-    }
-
     static void waitTime(long timeToWait) {
+        System.out.println("Ввод заблокирован");
         System.out.println("Подождите: " + timeToWait + " секунд");
     }
 
