@@ -75,7 +75,6 @@ public class UI {
                 }
             }
         });
-
         frame.add(topPanel, BorderLayout.NORTH);
         frame.add(pinPanel, BorderLayout.CENTER);
         frame.setVisible(true);

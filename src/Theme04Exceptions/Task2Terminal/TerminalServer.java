@@ -34,11 +34,6 @@ public class TerminalServer {
                 if (!tenSecsGone(startTime)) {
                     long timeToWait = (waitFor - (System.currentTimeMillis() - startTime)) / 1000;
                     UI.waitTime(timeToWait);
-                    try {
-                        Thread.currentThread().sleep(timeToWait * 1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                 }
             }
         }

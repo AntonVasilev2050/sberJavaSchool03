@@ -1,11 +1,5 @@
 package Theme04Exceptions.Task2Terminal;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 public class TerminalImp {
     public static void main(String[] args) {
         TerminalServer terminalServer = new TerminalServer();
