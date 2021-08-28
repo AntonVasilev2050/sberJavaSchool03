@@ -29,10 +29,15 @@ public class TerminalServer {
             if (isBlocked) {
                 if (tenSecsGone(startTime)) {
                     isBlocked = false;
-
+                    for (int i = 0; i < users.size(); i++) {
+                        if (users.get(i).getPin() == pin) {
+                            attempt = 0;
+                            return true;
+                        }
+                    }
                 }
                 if (!tenSecsGone(startTime)) {
-                    throw new  AccountIsLockedException(startTime);
+                    throw new AccountIsLockedException(startTime);
                 }
             }
         }
