@@ -5,7 +5,7 @@ public class TerminalImp {
         TerminalServer terminalServer = new TerminalServer();
         StringBuilder pinStr = new StringBuilder();
         int pin;
-        boolean accExists;
+        boolean accExists = false;
 
         User.add(new User("Anton", 1111, 100_000));
         User.add(new User("Tim", 1234, 100_000));
@@ -22,7 +22,11 @@ public class TerminalImp {
             pin = Integer.parseInt(pinStr.toString());
             pinStr.delete(0,4);
             System.out.println(pin);
-            accExists = terminalServer.accountExists(pin);
+            try {
+                accExists = terminalServer.accountExists(pin);
+            } catch (AccountIsLockedException e) {
+//                System.out.println("wait444");
+            }
             System.out.println("account exists: " + accExists);
         }while (!accExists);
         UI.welcome();

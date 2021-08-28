@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class TerminalServer {
     ArrayList<User> users = User.getUsers();
     int attempt = 1;
-    boolean isBlocked = false;
+    public static boolean isBlocked = false;
     long startTime = 0;
     long waitFor = 10_000;
 
-    boolean accountExists(int pin) {
+    boolean accountExists(int pin) throws AccountIsLockedException {
         System.out.println("attempt: " + attempt);
         if (attempt <= 3 && !isBlocked) {
             attempt++;
@@ -32,8 +32,7 @@ public class TerminalServer {
 
                 }
                 if (!tenSecsGone(startTime)) {
-                    long timeToWait = (waitFor - (System.currentTimeMillis() - startTime)) / 1000;
-                    UI.waitTime(timeToWait);
+                    throw new  AccountIsLockedException(startTime);
                 }
             }
         }
@@ -88,7 +87,7 @@ public class TerminalServer {
         }
     }
 
-    boolean tenSecsGone(long startTime) {
+    public boolean tenSecsGone(long startTime) {
         if (System.currentTimeMillis() - startTime < waitFor) {
             return false;
         }
