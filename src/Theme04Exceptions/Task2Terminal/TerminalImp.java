@@ -20,7 +20,7 @@ public class TerminalImp {
                 UI.frame.getFocusOwner();
             }
             pin = Integer.parseInt(pinStr.toString());
-            pinStr.delete(0,4);
+            pinStr.delete(0,4);                    // очищаем StringBuilder
             System.out.println(pin);
             try {
                 accExists = terminalServer.accountExists(pin);

@@ -3,7 +3,7 @@ package Theme04Exceptions.Task2Terminal;
 import java.util.ArrayList;
 
 public class TerminalServer {
-    ArrayList<User> users = User.getUsers();
+    ArrayList<User> users = User.getUsers();  // база пользователей
     int attempt = 1;
     public static boolean isBlocked = false;
     long startTime = 0;
@@ -13,32 +13,29 @@ public class TerminalServer {
         System.out.println("attempt: " + attempt);
         if (attempt <= 3 && !isBlocked) {
             attempt++;
-            for (int i = 0; i < users.size(); i++) {
-                if (users.get(i).getPin() == pin) {
-                    attempt = 0;
-                    return true;
-                }
-            }
+            return checkIfUserExists(pin);
         } else {
             if (attempt > 3) {
                 attempt = 1;
                 isBlocked = true;
                 startTime = System.currentTimeMillis();
-                System.out.println("blocked");
+                throw new AccountIsLockedException(startTime);
             }
-            if (isBlocked) {
-                if (tenSecsGone(startTime)) {
-                    isBlocked = false;
-                    for (int i = 0; i < users.size(); i++) {
-                        if (users.get(i).getPin() == pin) {
-                            attempt = 0;
-                            return true;
-                        }
-                    }
-                }
-                if (!tenSecsGone(startTime)) {
-                    throw new AccountIsLockedException(startTime);
-                }
+            if (tenSecsGone(startTime)) {
+                isBlocked = false;
+                return checkIfUserExists(pin);
+            } else {
+                throw new AccountIsLockedException(startTime);
+            }
+        }
+    }
+
+    // Проверяем есть ли юзер с таким пин в базе
+    boolean checkIfUserExists(int pin) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getPin() == pin) {
+                attempt = 0;
+                return true;
             }
         }
         return false;

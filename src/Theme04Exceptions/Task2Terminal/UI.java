@@ -13,7 +13,6 @@ public class UI {
     static JLabel[] pins = new JLabel[4];
 
     static void requestPin(StringBuilder pinStr) {
-        final int[] i = {0};
         frame = new JFrame("Terminal");
         frame.setBounds(20, 20, 200, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
