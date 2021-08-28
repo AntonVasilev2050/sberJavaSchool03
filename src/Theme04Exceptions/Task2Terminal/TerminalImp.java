@@ -25,7 +25,7 @@ public class TerminalImp {
             try {
                 accExists = terminalServer.accountExists(pin);
             } catch (AccountIsLockedException e) {
-//                System.out.println("wait444");
+
             }
             System.out.println("account exists: " + accExists);
         }while (!accExists);

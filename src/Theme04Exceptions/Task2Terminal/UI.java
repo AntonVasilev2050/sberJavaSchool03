@@ -10,6 +10,7 @@ public class UI {
     static JFrame frame;
     static JPanel topPanel;
     static JLabel enterPinLabel;
+    static JLabel[] pins = new JLabel[4];
 
     static void requestPin(StringBuilder pinStr) {
         final int[] i = {0};
@@ -27,11 +28,11 @@ public class UI {
         JPanel pinPanel = new JPanel();
         pinPanel.setLayout(new GridBagLayout());
 
-        JLabel[] pins = {
-                new JLabel(" X "),
-                new JLabel(" X "),
-                new JLabel(" X "),
-                new JLabel(" X ")};
+
+        pins[0] = new JLabel(" X ");
+        pins[1] = new JLabel(" X ");
+        pins[2] = new JLabel(" X ");
+        pins[3] = new JLabel(" X ");
         pins[0].setFont(new Font("Arial", Font.BOLD, 22));
         pins[1].setFont(new Font("Arial", Font.BOLD, 22));
         pins[2].setFont(new Font("Arial", Font.BOLD, 22));
@@ -47,34 +48,8 @@ public class UI {
         c.gridx = 3;
         pinPanel.add(pins[3], c);
 
-        frame.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
+        frame.addKeyListener(new PinListener(pinStr));
 
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                int digit;
-                try {
-                    digit = Integer.parseInt(String.valueOf(e.getKeyChar()));
-                    pinStr.append(e.getKeyChar());
-                    if (i[0] > 2) {
-                        frame.dispose();
-                    } else {
-                        pins[i[0]].setText(" " + e.getKeyChar() + " ");
-                        i[0]++;
-                    }
-                } catch (NumberFormatException ex) {
-                    wrongPinSymbols();
-                }
-            }
-        });
         frame.add(topPanel, BorderLayout.NORTH);
         frame.add(pinPanel, BorderLayout.CENTER);
         frame.setVisible(true);
@@ -105,7 +80,7 @@ public class UI {
         System.out.println("Недостаточно средств на счете.");
     }
 
-    static void userNotFound(){
+    static void userNotFound() {
         System.out.println("Пользователь на найден");
     }
 
