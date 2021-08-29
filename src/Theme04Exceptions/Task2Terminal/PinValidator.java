@@ -5,11 +5,11 @@ import java.awt.event.KeyListener;
 
 import static Theme04Exceptions.Task2Terminal.UI.wrongPinSymbols;
 
-public class PinListener implements KeyListener {
+public class PinValidator implements KeyListener {
     StringBuilder pinStr;
     int i = 0;
 
-    public PinListener(StringBuilder pinStr) {
+    public PinValidator(StringBuilder pinStr) {
         this.pinStr = pinStr;
     }
 

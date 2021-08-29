@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class TerminalServer {
     ArrayList<User> users = User.getUsers();  // база пользователей
     int attempt = 1;
-    public static boolean isBlocked = false;
+    boolean isBlocked = false;
     long startTime = 0;
     long waitFor = 10_000;
 

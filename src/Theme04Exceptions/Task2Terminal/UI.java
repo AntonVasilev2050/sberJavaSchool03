@@ -3,8 +3,6 @@ package Theme04Exceptions.Task2Terminal;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class UI {
     static JFrame frame;
@@ -47,7 +45,7 @@ public class UI {
         c.gridx = 3;
         pinPanel.add(pins[3], c);
 
-        frame.addKeyListener(new PinListener(pinStr));
+        frame.addKeyListener(new PinValidator(pinStr));
 
         frame.add(topPanel, BorderLayout.NORTH);
         frame.add(pinPanel, BorderLayout.CENTER);
