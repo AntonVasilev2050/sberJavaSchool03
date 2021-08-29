@@ -32,8 +32,8 @@ public class TerminalServer {
 
     // Проверяем есть ли юзер с таким пин в базе
     boolean checkIfUserExists(int pin) {
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getPin() == pin) {
+        for (User user : users) {
+            if (user.getPin() == pin) {
                 attempt = 0;
                 return true;
             }
@@ -42,9 +42,9 @@ public class TerminalServer {
     }
 
     double getAccountBalance(int pin) {
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getPin() == pin) {
-                return users.get(i).getBalance();
+        for (User user : users) {
+            if (user.getPin() == pin) {
+                return user.getBalance();
             }
         }
         UI.userNotFound();
@@ -54,10 +54,10 @@ public class TerminalServer {
     void deposit(int pin, double amount) {
         double balance;
         if (amount % 100 == 0 && amount > 0) {
-            for (int i = 0; i < users.size(); i++) {
-                if (users.get(i).getPin() == pin) {
-                    balance = users.get(i).getBalance();
-                    users.get(i).setBalance(balance + amount);
+            for (User user : users) {
+                if (user.getPin() == pin) {
+                    balance = user.getBalance();
+                    user.setBalance(balance + amount);
                 }
             }
             User.setUsers(users);
@@ -73,9 +73,9 @@ public class TerminalServer {
         if (amount % 100 == 0 && amount > 0) {
             balance = getAccountBalance(pin);
             if (balance >= amount) {
-                for (int i = 0; i < users.size(); i++) {
-                    if (users.get(i).getPin() == pin) {
-                        users.get(i).setBalance(balance - amount);
+                for (User user : users) {
+                    if (user.getPin() == pin) {
+                        user.setBalance(balance - amount);
                     }
                 }
                 User.setUsers(users);
@@ -90,9 +90,6 @@ public class TerminalServer {
     }
 
     public boolean tenSecsGone(long startTime) {
-        if (System.currentTimeMillis() - startTime < waitFor) {
-            return false;
-        }
-        return true;
+        return System.currentTimeMillis() - startTime >= waitFor;
     }
 }
