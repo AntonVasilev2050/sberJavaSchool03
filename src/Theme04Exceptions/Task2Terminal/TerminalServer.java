@@ -51,7 +51,7 @@ public class TerminalServer {
         return 0;
     }
 
-    void deposit(int pin, double amount) {
+    void deposit(int pin, double amount) throws WrongAmountException {
         double balance;
         if (amount % 100 == 0 && amount > 0) {
             for (User user : users) {
@@ -64,7 +64,8 @@ public class TerminalServer {
             balance = getAccountBalance(pin);
             UI.showBalance(balance);
         } else {
-            UI.wrongAmount();
+            throw new WrongAmountException();
+//            UI.wrongAmount();
         }
     }
 

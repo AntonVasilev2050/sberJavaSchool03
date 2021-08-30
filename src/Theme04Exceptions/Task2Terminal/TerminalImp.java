@@ -31,7 +31,11 @@ public class TerminalImp {
         }while (!accExists);
         UI.welcome();
         System.out.println(terminalServer.getAccountBalance(pin));
-        terminalServer.deposit(pin, 500);
+        try {
+            terminalServer.deposit(pin, 550);
+        } catch (WrongAmountException e) {
+//   handle with the wrong amount
+        }
         terminalServer.withdraw(pin, 10000);
     }
 }
