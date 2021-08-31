@@ -16,7 +16,7 @@ public class CacheInvocationHandler implements InvocationHandler {
         if(!method.isAnnotationPresent(Cache.class)){
             return method.invoke(delegate, args);
         }
-        System.out.println("Method " + method.getName() + " is invoked");
+//        System.out.println("Method " + method.getName() + " is invoked");
 //        List<Object> keys = new ArrayList<>(Arrays.asList(args));
 //        keys.add(method);
         Integer key = Integer.parseInt(String.valueOf(args[0]));
