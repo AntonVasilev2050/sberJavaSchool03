@@ -10,6 +10,11 @@ public class DatabaseCache implements Serializable {
 
     public static void createCacheOnDisk(String path) {
   // Create File
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void writeCacheOnDisk(HashMap cache) {
@@ -19,15 +24,16 @@ public class DatabaseCache implements Serializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public static HashMap<Integer, Object> readCacheFromDisk() {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file))) {
-            cache = (HashMap) objectInputStream.readObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file))) {
+                cache = (HashMap) objectInputStream.readObject();
+            } catch (Exception e) {
+                cache.put(0, 0);
+                writeCacheOnDisk(cache);
+            }
+
         return cache;
     }
 }

@@ -40,21 +40,5 @@ public class TestCache {
             }
         }
         DatabaseCache.writeCacheOnDisk(DatabaseCache.cache);
-        System.out.println("");
-
-
-//        run(calculator);
     }
-
-    private static void run(Calculator calculator) {
-        System.out.println(calculator.calc(7));
-        System.out.println(calculator.calc(3));
-        System.out.println(calculator.calc(7));
-        System.out.println(calculator.calc(7));
-        System.out.println(calculator.calc(10));
-        System.out.println(calculator.calc(11));
-        System.out.println(calculator.calc(10));
-
-    }
-
 }
