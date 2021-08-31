@@ -15,7 +15,7 @@ public class FinalStrings {
                 String name = field.getName();
                 String value = (String) field.get(o);
                 if(!name.equals(value)){
-                    System.out.println("The name of field '" + name + "' doesn't equal to its value - '" + value + "'");
+                    System.out.println("The name of the field '" + name + "' doesn't equal to its value - '" + value + "'");
                     return false;
                 }
             }
