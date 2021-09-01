@@ -20,7 +20,7 @@ public class DatabaseCache implements Serializable {
     public static void writeCacheOnDisk(HashMap cache) {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file))) {
             objectOutputStream.writeObject(cache);
-            System.out.println("Cache saved on disk");
+            System.out.println("Cache was saved to disk");
         } catch (Exception e) {
             e.printStackTrace();
         }

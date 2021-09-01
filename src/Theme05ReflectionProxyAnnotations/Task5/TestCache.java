@@ -29,7 +29,8 @@ public class TestCache {
                 numberStr = scanner.nextLine();
             } catch (NumberFormatException e) {
                 if (numberStr.equals("c")) {
-                    DatabaseCache.cache.clear();
+                    DatabaseCache.cache.clear();  // cleans ROM cache
+                    DatabaseCache.writeCacheOnDisk(DatabaseCache.cache);  // cleans disk cache
                     System.out.println("Cache is cleaned");
                     System.out.println(enterANumber);
                 } else {

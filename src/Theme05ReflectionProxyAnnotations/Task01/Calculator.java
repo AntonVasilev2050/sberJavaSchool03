@@ -7,7 +7,7 @@ public interface Calculator {
      * Расчет факториала числа.
      * @param number
      */
-    @Cache
+    @Cache(cacheMode = 1)
     int calc (int number);
 
 }
