@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class TestCache {
+public class CacheDemo {
     private final static String enterANumber = "Enter a number(0..14): ";
 
     public static void main(String[] args) {
@@ -37,7 +37,6 @@ public class TestCache {
                     System.out.println("Wrong symbol!");
                 }
                 numberStr = scanner.nextLine();
-
             }
         }
         DatabaseCache.writeCacheOnDisk(DatabaseCache.cache);
