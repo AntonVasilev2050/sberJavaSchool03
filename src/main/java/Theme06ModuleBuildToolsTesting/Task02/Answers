@@ -1,0 +1,52 @@
+2) Вопросы для самоконтроля:
+Что означает аннотация  Before?
+Метод помеченный этой аннотацией будет выполнен перед
+каждым тестом.
+@Before
+    public void setUp() {
+        objects = new Object[5];
+        objects[0] = new Cat("Barsik", 3);
+        objects[1] = new Cat("Murka", 1);
+        objects[2] = new Cat("Tom", 9);
+        objects[3] = new Cat("Seriy", 1);
+        objects[4] = new Cat("Nika", 2);
+        iterator = new ObjectIterator(objects);
+    }
+
+Как в тесте проверить, что метод должен бросить исключение?
+Можно по разному, но лучше всего так:
+ @Test(expected = IndexOutOfBoundsException.class)
+    public void invokeNextWhenDoesNotHaveNextThenThrowException(){
+        while (iterator.hasNext()){
+            iterator.next();
+        }
+        iterator.next();
+    }
+ То есть написать ожидаемое исключение в круглых скобках после аннотации @Test.
+
+
+Что такое mock? Spy?
+Mock-объект («объект имитация») представляет собой фиктивную реализацию интерфейса,
+предназначенную исключительно для тестирования взаимодействия с ним.
+Представьте, что разрабатываемый вами модуль использует сторонний сервис
+(например, получение текущих котировок валют на бирже). Этот сервис разрабатывает
+другая команда, он ещё не готов. Единственное, что у вас есть, это интерфейс сервиса.
+Можно написать собственную фиктивную (mock) реализацию сервиса, чтобы не ждать
+готовой реализации от другой команды.
+Mockito позволяет с минимумом затрат писать mock-реализации.
+
+
+Для чего применяется статический метод  Mockito.verify?
+Используйте verify, чтобы проверить факт вызова метода.
+@Test
+public void testList(){
+// Using mock object
+mockedList.add("One");
+mockedList.add("Two");
+mockedList.add("Two");
+}
+//Verification
+verify(mockedList).add("One");
+verify(mockedList,times(2).add("Two");
+verify(mockedList,never().add("Three");
+verify(mockedList,atList(3).add(anyString();

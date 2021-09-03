@@ -6,11 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Chat" />
+        <module name="SignOnSignIn" />
+        <module name="FriendsManagement" />
+        <module name="AccountViever" />
         <module name="SberJavaSchool" />
+        <module name="PhotoMiever" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="AccountViever" target="8" />
+      <module name="Chat" target="8" />
+      <module name="FriendsManagement" target="8" />
+      <module name="PhotoMiever" target="8" />
       <module name="SberJavaSchool" target="8" />
+      <module name="SignOnSignIn" target="8" />
+      <module name="SocialNetwork" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
