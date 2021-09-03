@@ -11,11 +11,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="AccountViever" exported="" />
-    <orderEntry type="module" module-name="Chat" exported="" />
-    <orderEntry type="module" module-name="FriendsManagement" exported="" />
-    <orderEntry type="module" module-name="PhotoMiever" exported="" />
-    <orderEntry type="module" module-name="SberJavaSchool" exported="" />
-    <orderEntry type="module" module-name="SignOnSignIn" exported="" />
   </component>
 </module>

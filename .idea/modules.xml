@@ -5,8 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/SocialNetwork/AccountViever/AccountViever.iml" filepath="$PROJECT_DIR$/SocialNetwork/AccountViever/AccountViever.iml" />
       <module fileurl="file://$PROJECT_DIR$/SocialNetwork/Chat/Chat.iml" filepath="$PROJECT_DIR$/SocialNetwork/Chat/Chat.iml" />
       <module fileurl="file://$PROJECT_DIR$/SocialNetwork/FriendsManagement/FriendsManagement.iml" filepath="$PROJECT_DIR$/SocialNetwork/FriendsManagement/FriendsManagement.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SocialNetwork/PhotoMiever/PhotoMiever.iml" filepath="$PROJECT_DIR$/SocialNetwork/PhotoMiever/PhotoMiever.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocialNetwork/PhotoMiever/PhotoViever.iml" filepath="$PROJECT_DIR$/SocialNetwork/PhotoMiever/PhotoViever.iml" />
       <module fileurl="file://$PROJECT_DIR$/SberJavaSchool.iml" filepath="$PROJECT_DIR$/SberJavaSchool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocialNetwork/Server/Server.iml" filepath="$PROJECT_DIR$/SocialNetwork/Server/Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/SocialNetwork/SignOnSignIn/SignOnSignIn.iml" filepath="$PROJECT_DIR$/SocialNetwork/SignOnSignIn/SignOnSignIn.iml" />
       <module fileurl="file://$PROJECT_DIR$/SocialNetwork/SocialNetwork.iml" filepath="$PROJECT_DIR$/SocialNetwork/SocialNetwork.iml" />
     </modules>
