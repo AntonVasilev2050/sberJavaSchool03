@@ -11,15 +11,15 @@
         <module name="Server" />
         <module name="SberJavaSchool" />
         <module name="Chat" />
+        <module name="PhotoViewer" />
         <module name="AccountViever" />
-        <module name="PhotoViever" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AccountViever" target="8" />
       <module name="Chat" target="8" />
       <module name="FriendsManagement" target="8" />
-      <module name="PhotoViever" target="8" />
+      <module name="PhotoViewer" target="8" />
       <module name="SberJavaSchool" target="8" />
       <module name="Server" target="8" />
       <module name="SignOnSignIn" target="8" />

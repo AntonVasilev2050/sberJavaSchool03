@@ -12,7 +12,7 @@
         <module>AccountViever</module>
         <module>Chat</module>
         <module>FriendsManagement</module>
-        <module>PhotoMiever</module>
+        <module>PhotoViewer</module>
         <module>SignOnSignIn</module>
         <module>Server</module>
     </modules>
