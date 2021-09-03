@@ -14,7 +14,7 @@ public class ObjectIterator implements Iterator<Object>{
     }
 
     @Override
-    public boolean hasNext() throws NoSuchElementException  {
+    public boolean hasNext()  {
         return pos < objects.length;
     }
 
@@ -36,11 +36,11 @@ public class ObjectIterator implements Iterator<Object>{
         objects[3] = new Cat("Seriy", 1);
         objects[4] = new Cat("Nika", 2);
         ObjectIterator iterator = new ObjectIterator(objects);
-        for (Object o: objects){
-            if(iterator.hasNext()){
-                System.out.println(iterator.next());;
-            }
-        }
+//        for (Object o: objects){
+//            if(iterator.hasNext()){
+//                System.out.println(iterator.next());;
+//            }
+//        }
     }
 }
 
