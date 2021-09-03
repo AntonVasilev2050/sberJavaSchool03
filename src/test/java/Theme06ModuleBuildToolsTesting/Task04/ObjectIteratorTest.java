@@ -46,7 +46,7 @@ public class ObjectIteratorTest {
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void invokeNextWhenDoesNotHaveNextThenTrowException(){
+    public void invokeNextWhenDoesNotHaveNextThenThrowException(){
         while (iterator.hasNext()){
             iterator.next();
         }
@@ -55,5 +55,13 @@ public class ObjectIteratorTest {
 
     @Test
     public void remove() {
+        while (iterator.hasNext()){
+            iterator.remove();
+            iterator.next();
+        }
+        for (Object o: objects){
+            boolean b = o == null;
+            assertTrue(b);
+        }
     }
 }
