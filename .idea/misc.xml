@@ -6,7 +6,13 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/SocialNetwork/pom.xml" />
         <option value="$PROJECT_DIR$/SocialNetwork/PhotoViever/pom.xml" />
+        <option value="$PROJECT_DIR$/SocialNetwork/SignUpSignIn/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/SocialNetwork/PhotoViewer/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK">

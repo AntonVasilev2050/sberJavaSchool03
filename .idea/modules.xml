@@ -8,7 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/SocialNetwork/PhotoViever/PhotoViewer.iml" filepath="$PROJECT_DIR$/SocialNetwork/PhotoViever/PhotoViewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/SberJavaSchool.iml" filepath="$PROJECT_DIR$/SberJavaSchool.iml" />
       <module fileurl="file://$PROJECT_DIR$/SocialNetwork/Server/Server.iml" filepath="$PROJECT_DIR$/SocialNetwork/Server/Server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SocialNetwork/SignOnSignIn/SignOnSignIn.iml" filepath="$PROJECT_DIR$/SocialNetwork/SignOnSignIn/SignOnSignIn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocialNetwork/SignUpSignIn/SignOnSignIn.iml" filepath="$PROJECT_DIR$/SocialNetwork/SignUpSignIn/SignOnSignIn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocialNetwork/SignOnSignIn/SignUpSignIn.iml" filepath="$PROJECT_DIR$/SocialNetwork/SignOnSignIn/SignUpSignIn.iml" />
       <module fileurl="file://$PROJECT_DIR$/SocialNetwork/SocialNetwork.iml" filepath="$PROJECT_DIR$/SocialNetwork/SocialNetwork.iml" />
     </modules>
   </component>

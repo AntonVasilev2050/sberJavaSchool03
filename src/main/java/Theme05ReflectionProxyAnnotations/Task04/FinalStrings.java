@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 //Проверить что все String константы имеют значение = их имени
 //public static final String MONDAY = "MONDAY";
 public class FinalStrings {
-    public static boolean check(Object o) throws IllegalAccessException {
+    public  boolean check(Object o) throws IllegalAccessException {
         Class<?> aClass = o.getClass();
         Field[] fields = aClass.getDeclaredFields();
         for (Field field: fields){
@@ -23,12 +23,12 @@ public class FinalStrings {
         return true;
     }
 
-    public static void main(String[] args) {
-        Week week = new Week();
-        try {
-            System.out.println(check(week));
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        Week week = new Week();
+//        try {
+//            System.out.println(check(week));
+//        } catch (IllegalAccessException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
