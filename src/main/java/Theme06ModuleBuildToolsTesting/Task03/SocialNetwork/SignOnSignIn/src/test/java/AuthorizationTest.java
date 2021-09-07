@@ -4,8 +4,6 @@ import org.mockito.Mockito;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
-
 public class AuthorizationTest {
 
     @Test

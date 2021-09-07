@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+<module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../SocialNetwork/RaitingService/target/classes" />
-    <output-test url="file://$MODULE_DIR$/../SocialNetwork/RaitingService/target/test-classes" />
-    <content url="file://$MODULE_DIR$/../SocialNetwork/RaitingService">
-      <sourceFolder url="file://$MODULE_DIR$/../SocialNetwork/RaitingService/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../SocialNetwork/RaitingService/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../SocialNetwork/RaitingService/src/test/java" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/../SocialNetwork/RaitingService/target" />
+    <output url="file://$MODULE_DIR$/../src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/RaitingService/target/classes" />
+    <output-test url="file://$MODULE_DIR$/../src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/RaitingService/target/test-classes" />
+    <content url="file://$MODULE_DIR$/../src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/RaitingService">
+      <sourceFolder url="file://$MODULE_DIR$/../src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/RaitingService/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/RaitingService/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/RaitingService/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/RaitingService/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
