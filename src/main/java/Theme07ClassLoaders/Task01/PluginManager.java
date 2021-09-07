@@ -6,15 +6,43 @@ package Theme07ClassLoaders.Task01;
 // PluginManager ищет скомпилированные классы плагина
 // в папке pluginRootDirectory\pluginName\
 
+import java.io.File;
+import java.util.LinkedList;
+import java.util.List;
+
 public class PluginManager {
-    private final String pluginRootDirectory;
+    private final File  pluginRootDirectory;
 
     public PluginManager(String pluginRootDirectory){
-        this.pluginRootDirectory = pluginRootDirectory;
+        this.pluginRootDirectory = new File(pluginRootDirectory);
     }
 
     public Plugin load(String pluginName, String pluginClassName){
 
-        return null;
+        return new Plugin() {
+            @Override
+            public void doUseful() {
+
+            }
+        };
+    }
+
+    public void initializePlugin(){
+        List<File> allPlugins = getAllPath();
+        for (File file: allPlugins){
+            String pluginName = file.getName();
+        }
+
+    }
+
+    public void startAll(){
+
+    }
+
+    private List<File> getAllPath(){
+        List<File> listResult = new LinkedList<>();
+        File[] files = pluginRootDirectory.listFiles();
+        assert  files != null;
+        return listResult;
     }
 }

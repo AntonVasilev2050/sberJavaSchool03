@@ -12,22 +12,28 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>3.12.4</version>
-            <scope>test</scope>
+            <artifactId>mockito-all</artifactId>
+            <version>2.0.2-beta</version>
         </dependency>
     </dependencies>
     <modules>
         <module>AccountViever</module>
         <module>Chat</module>
         <module>FriendsManagement</module>
-        <module>PhotoViewer</module>
-        <module>SignUpSignIn</module>
+        <module>SignOnSignIn</module>
         <module>Server</module>
     </modules>
 

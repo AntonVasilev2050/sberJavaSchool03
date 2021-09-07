@@ -6,7 +6,12 @@
 
     <groupId>groupId</groupId>
     <artifactId>SberJavaSchool</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+
+        <module>RaitingService</module>
+    </modules>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

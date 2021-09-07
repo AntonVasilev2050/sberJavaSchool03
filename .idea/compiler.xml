@@ -9,10 +9,8 @@
         <module name="SignOnSignIn" />
         <module name="FriendsManagement" />
         <module name="Server" />
-        <module name="SberJavaSchool" />
+        <module name="RaitingService" />
         <module name="Chat" />
-        <module name="SignUpSignIn" />
-        <module name="PhotoViewer" />
         <module name="AccountViever" />
       </profile>
     </annotationProcessing>
@@ -22,6 +20,7 @@
       <module name="FriendsManagement" target="8" />
       <module name="PhotoViever" target="8" />
       <module name="PhotoViewer" target="8" />
+      <module name="RaitingService" target="8" />
       <module name="SberJavaSchool" target="8" />
       <module name="Server" target="8" />
       <module name="SignOnSignIn" target="8" />
