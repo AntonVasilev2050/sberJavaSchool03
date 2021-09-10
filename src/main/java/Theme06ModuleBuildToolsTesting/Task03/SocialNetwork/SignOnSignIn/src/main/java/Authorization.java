@@ -1,5 +1,4 @@
-import org.mockito.Mock;
-import org.mockito.Mockito;
+package Theme06ModuleBuildToolsTesting.Task03.SocialNetwork.SignOnSignIn.src.main.java;
 
 public class Authorization {
     // show authorization dialog
@@ -14,6 +13,4 @@ public class Authorization {
     public String[] signOn(){
         return null;
     }
-
-
 }
