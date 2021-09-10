@@ -84,7 +84,7 @@ public class CacheDemo {
     public static void cacheClear() {
         DatabaseCache.cache.clear();  // cleans ROM cache
 //        DatabaseCache.writeCacheOnDisk(DatabaseCache.cache);  // cleans disk cache
-        System.out.println("Cache is cleaned");
+        System.out.println("Cache was cleaned");
         System.out.println(askItemName);
     }
 
