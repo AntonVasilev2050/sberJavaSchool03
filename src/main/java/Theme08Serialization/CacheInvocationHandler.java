@@ -30,11 +30,11 @@ public class CacheInvocationHandler implements InvocationHandler {
         zip = annotation.zip();
         if (zip) {
             fileNamePrefix = fileNamePrefix + ".zip";
-//            DatabaseCache.createCacheOnDisk(DatabaseCache.path, fileNamePrefix);
+            DatabaseCache.createCacheOnDisk(DatabaseCache.path, fileNamePrefix);
             DatabaseCache.cache = DatabaseCache.readCacheFromDiskZip(fileNamePrefix);
         } else {
             fileNamePrefix = fileNamePrefix + ".cache";
-//            DatabaseCache.createCacheOnDisk(DatabaseCache.path, fileNamePrefix);
+            DatabaseCache.createCacheOnDisk(DatabaseCache.path, fileNamePrefix);
             DatabaseCache.cache = DatabaseCache.readCacheFromDisk(fileNamePrefix);
         }
         if (!annotation.accountableParameter().equals("all")) {
