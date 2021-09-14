@@ -27,7 +27,7 @@ public class Executor {
 
         long before = System.currentTimeMillis();
         for (int numberToCalculate : list) {
-            System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorial(numberToCalculate));
+            System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorialRecursion(numberToCalculate));
         }
         System.out.println("Processing time " + (System.currentTimeMillis() - before));
 
@@ -39,7 +39,7 @@ public class Executor {
                 @Override
                 public void run() {
                     int numberToCalculate = list.get(finalI);
-                    System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorial(numberToCalculate));
+                    System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorialRecursion(numberToCalculate));
                 }
             });
             thread.start();
@@ -58,7 +58,7 @@ public class Executor {
                 @Override
                 public void run() {
                     int numberToCalculate = list.get(finalI);
-                    System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorial(numberToCalculate));
+                    System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorialRecursion(numberToCalculate));
                     latch.countDown();
                 }
             }).start();
@@ -73,7 +73,7 @@ public class Executor {
             public void run() {
                 for (int i = 0; i < 10; i++) {
                     int numberToCalculate = list.get(i);
-                    System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorial(numberToCalculate));
+                    System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorialRecursion(numberToCalculate));
                 }
                 latch1.countDown();
             }
@@ -83,7 +83,7 @@ public class Executor {
             public void run() {
                 for (int i = 10; i < listSize; i++) {
                     int numberToCalculate = list.get(i);
-                    System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorial(numberToCalculate));
+                    System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorialRecursion(numberToCalculate));
                 }
                 latch1.countDown();
             }
