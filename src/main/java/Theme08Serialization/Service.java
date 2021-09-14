@@ -13,7 +13,7 @@ public interface Service {
     @Cache(cacheType = FILE, zip = true, listList = 100_000)
     List<String> work(String item);
 
-    @Cache(cacheType = FILE, zip = true)
+    @Cache(cacheType = FILE, zip = true, fileNamePrefix = "facto")
     int factorial(int number);
 
 }
