@@ -25,12 +25,14 @@ public class Executor {
         System.out.println(list);
         List<Thread> threadList = new ArrayList<>();
 
+//        Without concurrency
         long before = System.currentTimeMillis();
         for (int numberToCalculate : list) {
             System.out.println("Factorial of " + numberToCalculate + " - " + ExtraMath.factorialRecursion(numberToCalculate));
         }
         System.out.println("Processing time " + (System.currentTimeMillis() - before));
 
+//        With concurrency
         int listSize = list.size();
         long beforeC = System.currentTimeMillis();
         for (int i = 0; i < listSize; i++) {
@@ -50,6 +52,8 @@ public class Executor {
         }
         System.out.println("Processing time with concurrency " + (System.currentTimeMillis() - beforeC));
 
+
+//        With concurrency and using a CountDownLatch
         long beforeWithLatch = System.currentTimeMillis();
         final CountDownLatch latch = new CountDownLatch(listSize);
         for (int i = 0; i < listSize; i++) {
@@ -66,6 +70,7 @@ public class Executor {
         latch.await();
         System.out.println("Processing time with concurrency " + (System.currentTimeMillis() - beforeWithLatch));
 
+//        With concurrency, two threads, using CountDownLatch
         long beforeTwo = System.currentTimeMillis();
         final CountDownLatch latch1 = new CountDownLatch(2);
         new Thread(new Runnable() {

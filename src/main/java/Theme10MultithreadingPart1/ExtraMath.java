@@ -26,13 +26,11 @@ public class ExtraMath {
     }
 
     public static long factorialLongStream(int number){
-        long factorial;
-        return factorial = LongStream.rangeClosed(1, number).parallel().reduce((a, b) -> a * b).getAsLong();
+        return LongStream.rangeClosed(1, number).parallel().reduce((a, b) -> a * b).getAsLong();
     }
 
     public static BigInteger factorialBigInteger(int number){
-        BigInteger factorial;
-        return factorial =  IntStream.rangeClosed(1, number)
+        return IntStream.rangeClosed(1, number)
                 .parallel()
                 .mapToObj(String::valueOf)
                 .map(BigInteger::new)
