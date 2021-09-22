@@ -54,8 +54,8 @@ public class Executor {
 
 
 //        With concurrency and using a CountDownLatch
-        long beforeWithLatch = System.currentTimeMillis();
         final CountDownLatch latch = new CountDownLatch(listSize);
+        long beforeWithLatch = System.currentTimeMillis();
         for (int i = 0; i < listSize; i++) {
             int finalI = i;
             new Thread(new Runnable() {

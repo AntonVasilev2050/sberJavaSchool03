@@ -40,17 +40,17 @@ public class ExtraMath {
 
     public static void main(String[] args) {
         long before = System.nanoTime();
-        System.out.println(factorialBigInteger(50));
+        System.out.println(factorialBigInteger(20));
         System.out.println(System.nanoTime() - before);
         System.out.println("_____________________");
 
         before = System.nanoTime();
-        System.out.println(factorialLongStream(50));
+        System.out.println(factorialLongStream(20));
         System.out.println(System.nanoTime() - before);
         System.out.println("_____________________");
 
         before = System.nanoTime();
-        System.out.println(factorialRecursion(50));
+        System.out.println(factorialRecursion(20));
         System.out.println(System.nanoTime() - before);
 
     }
