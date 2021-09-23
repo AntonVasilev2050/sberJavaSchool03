@@ -1,24 +1,44 @@
 package Theme11MultithreadingPart2;
 
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class FixedThreadPool implements ThreadPool {
-    private final int numberOfThreads;
+public class ScalableThreadPool implements ThreadPool {
+    private final int minNumberOfThreads;
+    private final int maxNumberOfThreads;
+    private int numberOfTreads = 0;
     private final LinkedBlockingQueue<Runnable> runnableQueue;
+    private PoolWorker[] poolWorkers;
 
-    public FixedThreadPool(int numberOfThreads) {
-        this.numberOfThreads = numberOfThreads;
-        runnableQueue = new LinkedBlockingQueue();
-
+    public ScalableThreadPool(int minNumberOfThreads, int maxNumberOfThreads) {
+        this.minNumberOfThreads = minNumberOfThreads;
+        this.maxNumberOfThreads = maxNumberOfThreads;
+        runnableQueue = new LinkedBlockingQueue<>();
+        poolWorkers = new PoolWorker[maxNumberOfThreads];
     }
 
-    private class PoolWorker extends Thread{
+    @Override
+    public void start() {
+        for (int i = 0; i < minNumberOfThreads; i++) {
+            poolWorkers[i] =  new PoolWorker();
+            poolWorkers[i].start();
+
+            numberOfTreads++;
+        }
+    }
+
+    @Override
+    public void execute(Runnable runnable) {
+        runnableQueue.add(runnable);
+    }
+
+    private class PoolWorker extends Thread {
         @Override
         public void run() {
             Runnable runnable;
-            while (true){
-                synchronized (runnableQueue){
-                    while (runnableQueue.isEmpty()){
+            while (true) {
+                synchronized (runnableQueue) {
+                    while (runnableQueue.isEmpty()) {
                         try {
                             runnableQueue.wait();
                         } catch (InterruptedException e) {
@@ -30,19 +50,6 @@ public class FixedThreadPool implements ThreadPool {
                 runnable.run();
             }
         }
-    }
-
-    @Override
-    public void start()  {
-        for(int i = 0; i < numberOfThreads; i++){
-            new PoolWorker().start();
-        }
-    }
-
-    @Override
-    public void execute(Runnable runnable) {
-        runnableQueue.add(runnable);
-//        runnableQueue.notifyAll();
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -94,7 +101,7 @@ public class FixedThreadPool implements ThreadPool {
                 System.out.println("4");
             }
         };
-        FixedThreadPool pool = new FixedThreadPool(1);
+        ScalableThreadPool pool = new ScalableThreadPool(3, 4);
         pool.start();
         pool.execute(runnable1);
         pool.execute(runnable2);
