@@ -1,0 +1,222 @@
+PS C:\Users\USER\OneDrive\BBdocuments\IdeaProjects\theme13\src> java -XX:+PrintCompilation -XX:+UnlockDiagnosticVMOptions -XX:+PrintInlining
+     37    1       3       java.lang.String::charAt (25 bytes)
+                              @ 1   java.lang.String::isLatin1 (19 bytes)   inline
+                              @ 12   java.lang.StringLatin1::charAt (28 bytes)   inline
+                                @ 15  java/lang/StringIndexOutOfBoundsException::<init> (not loaded)   not inlineable
+                              @ 21   java.lang.StringUTF16::charAt (11 bytes)   inline
+                                @ 2   java.lang.StringUTF16::checkIndex (9 bytes)   inline
+                                  @ 2   java.lang.StringUTF16::length (5 bytes)   inline
+                                  @ 5   java.lang.String::checkIndex (48 bytes)   callee is too large
+                                @ 7   java.lang.StringUTF16::getChar (60 bytes)   intrinsic
+     45    5       2       java.lang.StringLatin1::hashCode (42 bytes)
+     46    8       3       java.util.ImmutableCollections$SetN::probe (56 bytes)
+                              @ 1   java.lang.Object::hashCode (0 bytes)   no static binding
+                              @ 9   java.lang.Math::floorMod (20 bytes)   inline
+                              @ 31   java.lang.Object::equals (11 bytes)   no static binding
+     49   10       3       java.util.Objects::requireNonNull (14 bytes)
+                              @ 8   java.lang.NullPointerException::<init> (5 bytes)   don't inline Throwable constructors
+     52   14       3       java.lang.StringLatin1::equals (36 bytes)
+     52   17       3       java.util.ImmutableCollections$SetN$SetNIterator::next (90 bytes)
+                              @ 86  java/util/NoSuchElementException::<init> (not loaded)   not inlineable
+     55    4       3       java.lang.Object::<init> (1 bytes)
+     57   22     n 0       jdk.internal.misc.Unsafe::getReferenceVolatile (native)
+     58    7       3       java.lang.Math::floorMod (20 bytes)
+     59   23       4       java.lang.Object::<init> (1 bytes)
+     60   19   !   3       java.util.concurrent.ConcurrentHashMap::putVal (432 bytes)
+     60    4       3       java.lang.Object::<init> (1 bytes)   made not entrant
+                              @ 17   java.lang.Object::hashCode (0 bytes)   no static binding
+                              @ 20   java.util.concurrent.ConcurrentHashMap::spread (10 bytes)   inline
+                              @ 69   java.util.concurrent.ConcurrentHashMap::tabAt (22 bytes)   callee uses too much stack
+                              @ 91   java.util.concurrent.ConcurrentHashMap$Node::<init> (20 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 94   java.util.concurrent.ConcurrentHashMap::casTabAt (21 bytes)   callee uses too much stack
+                              @ 120   java.util.concurrent.ConcurrentHashMap::helpTransfer (124 bytes)   callee is too large
+                              @ 159   java.lang.Object::equals (11 bytes)   no static binding
+                              @ 192   java.util.concurrent.ConcurrentHashMap::tabAt (22 bytes)   callee uses too much stack
+                              @ 242   java.lang.Object::equals (11 bytes)   no static binding
+                              @ 293   java.util.concurrent.ConcurrentHashMap$Node::<init> (20 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 331  java/util/concurrent/ConcurrentHashMap$TreeBin::putTreeVal (not loaded)   not inlineable
+                              @ 374  java/lang/IllegalStateException::<init> (not loaded)   not inlineable
+               !m             @ 409   java.util.concurrent.ConcurrentHashMap::treeifyBin (164 bytes)   callee is too large
+                        79   39     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLLL)L (native)   (static)
+           @ 427   java.util.concurrent.ConcurrentHashMap::addCount (280 bytes)   callee is too large
+               !              @ 49       85   40     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)L (native)   (static)
+ java.util.concurrent.ConcurrentHashMap::initTable (112 bytes)   callee is too large
+                              @ 12   java.lang.NullPointerException::<init> (5 bytes)   don't inline Throwable constructors
+     88   41     n 0       java.lang.Object::hashCode (native)
+     89   34       3       java.util.HashMap::putVal (300 bytes)
+                              @ 20   java.util.HashMap::resize (356 bytes)   callee is too large
+                              @ 56   java.util.HashMap::newNode (13 bytes)   callee uses too much stack
+                              @ 91   java.lang.Object::equals (11 bytes)   no static binding
+                              @ 123   java.util.HashMap$TreeNode::putTreeVal (314 bytes)   not inlineable
+                              @ 152   java.util.HashMap::newNode (13 bytes)   callee uses too much stack
+                              @ 169   java.util.HashMap::treeifyBin (110 bytes)   callee is too large
+                              @ 203   java.lang.Object::equals (11 bytes)   no static binding
+     94   42     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLLL)L (native)
+                              @ 253   java.util.HashMap::afterNodeAccess (1 bytes)   inline
+     96   43     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLLLLLL)L (native)   (static)
+                              @ 288   java.util.HashMap::resize (356 bytes)   callee is too large
+                              @ 295   java.util.HashMap::afterNodeInsertion (1 bytes)   inline
+    100   29       3       java.util.HashMap::hash (20 bytes)
+                              @ 9   java.lang.Object::hashCode (0 bytes)   no static binding
+    102   46     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)V (native)   (static)
+    103   18       3       java.util.ImmutableCollections$SetN$SetNIterator::hasNext (13 bytes)
+    103   35       3       java.util.HashMap::newNode (13 bytes)
+                              @ 9   java.util.HashMap$Node::<init> (26 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+    107   47     n 0       java.lang.invoke.MethodHandle::invokeBasic(L)L (native)
+    108   36       3       java.util.HashMap$Node::<init> (26 bytes)
+    108   48     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)L (native)   (static)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+    110    9       3       java.lang.String::equals (50 bytes)
+                              @ 44   java.lang.StringLatin1::equals (36 bytes)   callee is too large
+    111   49     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)L (native)   (static)
+    112   37       3       java.util.HashMap::afterNodeInsertion (1 bytes)
+    113    3       3       java.lang.String::isLatin1 (19 bytes)
+    114   50     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLL)V (native)   (static)
+    118    2       3       java.lang.StringLatin1::charAt (28 bytes)
+    118   51     n 0       java.lang.invoke.MethodHandle::invokeBasic(LL)L (native)
+                              @ 15  java/lang/StringIndexOutOfBoundsException::<init> (not loaded)   not inlineable
+    120   52     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLL)L (native)   (static)
+    123    6       2       java.lang.String::hashCode (60 bytes)
+                              @ 17   java.lang.String::isLatin1 (19 bytes)   inline
+                              @ 27   java.lang.StringLatin1::hashCode (42 bytes)   callee is too large
+                              @ 37   java.lang.StringUTF16::hashCode (33 bytes)   callee uses too much stack
+    126   20       3       java.util.concurrent.ConcurrentHashMap::tabAt (22 bytes)
+                              @ 15   jdk.internal.misc.Unsafe::getReferenceAcquire (7 bytes)   inline
+                                @ 3   jdk.internal.misc.Unsafe::getReferenceVolatile (0 bytes)   intrinsic
+    128   21       3       jdk.internal.misc.Unsafe::getReferenceAcquire (7 bytes)
+                              @ 3   jdk.internal.misc.Unsafe::getReferenceVolatile (0 bytes)   intrinsic
+    129   12       3       java.lang.String::coder (15 bytes)
+    132   54     n 0       java.lang.invoke.MethodHandle::linkToStatic(LL)L (native)   (static)
+    133   24       3       java.util.concurrent.ConcurrentHashMap::spread (10 bytes)
+    134   55       3       java.lang.String::length (11 bytes)
+    134   56     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLL)L (native)   (static)
+                              @ 6   java.lang.String::coder (15 bytes)   inline
+    136   57     n 0       java.lang.System::arraycopy (native)   (static)
+    136   25       3       java.util.concurrent.ConcurrentHashMap$Node::<init> (20 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+    138   58     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLLL)V (native)   (static)
+    140   45       1       java.lang.Class::getClassLoader0 (5 bytes)
+    140   59     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLL)L (native)
+    141   44       1       java.lang.Enum::ordinal (5 bytes)
+    141   60     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLLL)L (native)   (static)
+    142   53       1       java.lang.invoke.MethodType::returnType (5 bytes)
+    143   61       3       java.util.Objects::equals (23 bytes)
+                              @ 11   java.lang.Object::equals (11 bytes)   no static binding
+    144   62       3       java.lang.StringLatin1::canEncode (13 bytes)
+    144   63       3       java.lang.StringLatin1::indexOf (61 bytes)
+                              @ 1   java.lang.StringLatin1::canEncode (13 bytes)   inline
+    148   64       3       java.lang.Math::min (11 bytes)
+    152   67       3       java.util.concurrent.ConcurrentHashMap::putIfAbsent (8 bytes)
+               !m             @ 4   java.util.concurrent.ConcurrentHashMap::putVal (432 bytes)   callee is too large
+    153   69       3       java.lang.AbstractStringBuilder::ensureCapacityInternal (39 bytes)
+                              @ 24   java.lang.AbstractStringBuilder::newCapacity (59 bytes)   callee is too large
+                              @ 32   java.util.Arrays::copyOf (19 bytes)   callee uses too much stack
+    155   72       3       java.lang.AbstractStringBuilder::append (77 bytes)
+    155   73       4       java.lang.String::charAt (25 bytes)
+                              @ 7   java.lang.AbstractStringBuilder::ensureCapacityInternal (39 bytes)   callee is too large
+                              @ 11   java.lang.AbstractStringBuilder::isLatin1 (19 bytes)   inline
+            157    1       3       java.lang.String::charAt (25 bytes)   made not entrant
+                      @ 18   java.lang.StringLatin1::canEncode (13 bytes)   inline
+                              @ 1   java.lang.String::isLatin1 (19 bytes)   inline (hot)
+                              @ 12   java.lang.StringLatin1::charAt (28 bytes)   inline (hot)
+                              @ 46   java.lang.AbstractStringBuilder::isLatin1Usage: java [options] <mainclass> [args...]
+           (to execute a class)
+   or  java [options] -jar <jarfile> [args...]
+           (to execute a jar file)
+   or  java [options] -m <module>[/<mainclass>] [args...]
+       java [options] --module <module>[/<mainclass>] [args...]
+           (to execute the main class in a module)
+   or  java [options] <sourcefile> [args]
+           (to execute a single source-file program)
+
+ Arguments following the main class, source file, -jar <jarfile>,
+ -m or --module <module>/<mainclass> are passed as the arguments to
+ main class.
+
+ where options include:
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+    --class-path <class search path of directories and zip/jar files>
+                  A ; separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -p <module path>
+    --module-path <module path>...
+                  A ; separated list of directories, each directory
+                  is a directory of modules.
+    --upgrade-module-path <module path>...
+                  A ; separated list of directories, each directory
+                  is a directory of modules that replace upgradeable
+                  modules in the runtime image
+    --add-modules <module name>[,<module name>...]
+                  root modules to resolve in addition to the initial module.
+                  <module name> can also be ALL-DEFAULT, ALL-SYSTEM,
+                  ALL-MODULE-PATH.
+    --list-modules
+                  list observable modules and exit
+    -d <module name>
+    --describe-module <module name>
+                  describe a module and exit
+    --dry-run     create VM and load main class but do not execute main method.
+                  The --dry-run option may be useful for validating the
+                  command-line options such as the module system configuration.
+    --validate-modules
+                  validate all modules and exit
+                  The --validate-modules option may be useful for finding
+                  conflicts and other errors with modules on the module path.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|module|gc|jni]
+                  enable verbose output for the given subsystem
+    -version      print product version to the error stream and exit
+    --version     print product version to the output stream and exit
+    -showversion  print product version to the error stream and continue
+    --show-version
+                  print product version to the output stream and continue
+    --show-module-resolution
+                  show module resolution output during startup
+    -? -h -help
+                  print this help message to the error stream
+    --help        print this help message to the output stream
+    -X            print help on extra options to the error stream
+    --help-extra  print help on extra options to the output stream
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:jdwp
+                  see also -agentlib:jdwp=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+                  HiDPI scaled images are automatically supported and used
+                  if available. The unscaled image filename, e.g. image.ext,
+                  should always be passed as the argument to the -splash option.
+                  The most appropriate scaled image provided will be picked up
+                  automatically.
+                  See the SplashScreen API documentation for more information
+    @argument files
+                  one or more argument files containing options
+    -disable-@files
+                  prevent further argument file expansion
+    --enable-preview
+                  allow classes to depend on preview features of this release
+To specify an argument for a long option, you can use --<name>=<value> or
+--<name> <value>.
+
+ (19 bytes)   inline
+    160   74       4       java.lang.String::length (11 bytes)
+                              @ 53
