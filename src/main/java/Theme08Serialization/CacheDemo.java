@@ -3,9 +3,9 @@ package Theme08Serialization;
 
 import java.lang.reflect.Proxy;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class CacheDemo {
     private final static String askItemName = "Enter a symbol or a number: ";
@@ -45,7 +45,7 @@ public class CacheDemo {
                 delegate.getClass().getInterfaces(),
                 new CacheInvocationHandler(delegate));
 
-        DatabaseCache.cache = new HashMap<>();
+        DatabaseCache.cache = new ConcurrentHashMap<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println(methodToImplement);
         System.out.println(askItemName);

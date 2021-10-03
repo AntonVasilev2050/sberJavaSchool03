@@ -7,24 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SignOnSignIn" />
+        <module name="Chat" />
         <module name="FriendsManagement" />
         <module name="Server" />
-        <module name="RaitingService" />
-        <module name="Chat" />
         <module name="AccountViever" />
+        <module name="RaitingService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AccountViever" target="8" />
       <module name="Chat" target="8" />
       <module name="FriendsManagement" target="8" />
-      <module name="PhotoViever" target="8" />
-      <module name="PhotoViewer" target="8" />
       <module name="RaitingService" target="8" />
       <module name="SberJavaSchool" target="8" />
       <module name="Server" target="8" />
       <module name="SignOnSignIn" target="8" />
-      <module name="SignUpSignIn" target="8" />
       <module name="SocialNetwork" target="8" />
     </bytecodeTargetLevel>
   </component>

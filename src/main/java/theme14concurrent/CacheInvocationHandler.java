@@ -1,4 +1,7 @@
-package Theme08Serialization;
+package theme14concurrent;
+
+import Theme08Serialization.Cache;
+import Theme08Serialization.DatabaseCache;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -30,12 +33,12 @@ public class CacheInvocationHandler implements InvocationHandler {
         zip = annotation.zip();
         if (zip) {
             fileNamePrefix = fileNamePrefix + ".zip";
-            DatabaseCache.createCacheOnDisk(DatabaseCache.path, fileNamePrefix);
-            DatabaseCache.cache = DatabaseCache.readCacheFromDiskZip(fileNamePrefix);
+            Theme08Serialization.DatabaseCache.createCacheOnDisk(Theme08Serialization.DatabaseCache.path, fileNamePrefix);
+            Theme08Serialization.DatabaseCache.cache = Theme08Serialization.DatabaseCache.readCacheFromDiskZip(fileNamePrefix);
         } else {
             fileNamePrefix = fileNamePrefix + ".cache";
-            DatabaseCache.createCacheOnDisk(DatabaseCache.path, fileNamePrefix);
-            DatabaseCache.cache = DatabaseCache.readCacheFromDisk(fileNamePrefix);
+            Theme08Serialization.DatabaseCache.createCacheOnDisk(Theme08Serialization.DatabaseCache.path, fileNamePrefix);
+            Theme08Serialization.DatabaseCache.cache = Theme08Serialization.DatabaseCache.readCacheFromDisk(fileNamePrefix);
         }
         if (!annotation.accountableParameter().equals("all")) {
             try {
@@ -50,18 +53,18 @@ public class CacheInvocationHandler implements InvocationHandler {
             }
         }
         System.out.println("keyList = " + keyList);
-        if (DatabaseCache.cache.containsKey(keyList)) {
+        if (Theme08Serialization.DatabaseCache.cache.containsKey(keyList)) {
             System.out.println("returns from cache");
-            return DatabaseCache.cache.get(keyList);
+            return Theme08Serialization.DatabaseCache.cache.get(keyList);
         } else {
             Object invoke = method.invoke(delegate, args);
-            DatabaseCache.cache.put(keyList, invoke);
+            Theme08Serialization.DatabaseCache.cache.put(keyList, invoke);
             cacheType = annotation.cacheType();
             if (cacheType == FILE) {
                 if (zip) {
-                    DatabaseCache.writeCacheOnDiskZip(DatabaseCache.cache, fileNamePrefix);
+                    Theme08Serialization.DatabaseCache.writeCacheOnDiskZip(Theme08Serialization.DatabaseCache.cache, fileNamePrefix);
                 } else {
-                    DatabaseCache.writeCacheOnDisk(DatabaseCache.cache, fileNamePrefix);
+                    Theme08Serialization.DatabaseCache.writeCacheOnDisk(DatabaseCache.cache, fileNamePrefix);
                 }
             }
             return invoke;

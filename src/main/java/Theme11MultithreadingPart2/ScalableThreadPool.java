@@ -19,12 +19,19 @@ public class ScalableThreadPool implements ThreadPool {
 
     @Override
     public void start() {
-        for (int i = 0; i < minNumberOfThreads; i++) {
-            poolWorkers[i] =  new PoolWorker();
+        for (int i = 1; i <= minNumberOfThreads; i++) {
+            poolWorkers[i] = new PoolWorker();
             poolWorkers[i].start();
 
             numberOfTreads++;
+            System.out.println("n " + numberOfTreads);
+            if ((numberOfTreads < maxNumberOfThreads)) {
+                new PoolWorker().start();
+                numberOfTreads++;
+            }
+            System.out.println("nn " + numberOfTreads);
         }
+
     }
 
     @Override
@@ -101,7 +108,7 @@ public class ScalableThreadPool implements ThreadPool {
                 System.out.println("4");
             }
         };
-        ScalableThreadPool pool = new ScalableThreadPool(3, 4);
+        ScalableThreadPool pool = new ScalableThreadPool(3, 5);
         pool.start();
         pool.execute(runnable1);
         pool.execute(runnable2);
