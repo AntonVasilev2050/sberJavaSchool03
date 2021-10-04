@@ -3,13 +3,11 @@ package theme15gof1gof2;
 enum SmartOrientation {
 
     NORTH {
-        public SmartOrientation turn() {
-            return EAST;
-        }
+        @Override
+        public SmartOrientation turn() {return EAST;}
 
-        public Position move(Position position) {
-            return position.changeY(1);
-        }
+        @Override
+        public Position move(Position position) {return position.changeY(1);}
     },
     WEST {
         public SmartOrientation turn() {
@@ -37,6 +35,9 @@ enum SmartOrientation {
         public Position move(Position position) {
             return position.changeX(1);
         }
-    }
+    };
 
+    public abstract SmartOrientation turn();
+    public abstract Position move(Position position);
 }
+

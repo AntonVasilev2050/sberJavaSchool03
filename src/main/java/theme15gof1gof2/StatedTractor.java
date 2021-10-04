@@ -6,7 +6,7 @@ public class StatedTractor {
     private SmartOrientation orientation = SmartOrientation.NORTH;
 
     public void moveForwards(){
-        position = orientation
+        position = orientation.move(position);
     }
 
     public void turnClockwise(){
