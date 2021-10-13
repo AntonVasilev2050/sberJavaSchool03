@@ -1,5 +1,6 @@
 package theme17spring;
 
 public interface DownloadFile {
-    void download(String urlStr, String file, int rateLimit);
+    String createDestinationFile(String path, String urlStr);
+    void download(String urlStr, String fullPathToFile, int rateLimit);
 }
