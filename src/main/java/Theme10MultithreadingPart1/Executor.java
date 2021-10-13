@@ -1,4 +1,4 @@
-package Theme10MultithreadingPart1;
+package main.java.Theme10MultithreadingPart1;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;

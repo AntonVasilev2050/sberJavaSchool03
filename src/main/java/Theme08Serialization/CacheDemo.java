@@ -1,4 +1,4 @@
-package Theme08Serialization;
+package main.java.Theme08Serialization;
 
 
 import java.lang.reflect.Proxy;
@@ -40,12 +40,12 @@ public class CacheDemo {
     }
 
     public static void cache(String methodToImplement) {
-        Service delegate = new ServiceImp();
-        Service service = (Service) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),
+        Theme08Serialization.Service delegate = new Theme08Serialization.ServiceImp();
+        Theme08Serialization.Service service = (Theme08Serialization.Service) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),
                 delegate.getClass().getInterfaces(),
-                new CacheInvocationHandler(delegate));
+                new Theme08Serialization.CacheInvocationHandler(delegate));
 
-        DatabaseCache.cache = new ConcurrentHashMap<>();
+        Theme08Serialization.DatabaseCache.cache = new ConcurrentHashMap<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println(methodToImplement);
         System.out.println(askItemName);
@@ -82,7 +82,7 @@ public class CacheDemo {
     }
 
     public static void cacheClear() {
-        DatabaseCache.cache.clear();  // cleans ROM cache
+        Theme08Serialization.DatabaseCache.cache.clear();  // cleans ROM cache
 //        DatabaseCache.writeCacheOnDisk(DatabaseCache.cache);  // cleans disk cache
         System.out.println("Cache was cleaned");
         System.out.println(askItemName);
