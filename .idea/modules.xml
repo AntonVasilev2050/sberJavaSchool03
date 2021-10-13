@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/SberJavaSchool.iml" filepath="$PROJECT_DIR$/SberJavaSchool.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/Server/Server.iml" filepath="$PROJECT_DIR$/src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/Server/Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/SignOnSignIn/SignOnSignIn.iml" filepath="$PROJECT_DIR$/src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/SignOnSignIn/SignOnSignIn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/SocialNetwork.iml" filepath="$PROJECT_DIR$/src/main/java/Theme06ModuleBuildToolsTesting/Task03/SocialNetwork/SocialNetwork.iml" />
     </modules>
   </component>
 </project>

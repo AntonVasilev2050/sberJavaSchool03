@@ -1,4 +1,4 @@
-package main.java.theme17spring;
+package theme17spring;
 
 import java.io.BufferedInputStream;
 import java.io.FileOutputStream;

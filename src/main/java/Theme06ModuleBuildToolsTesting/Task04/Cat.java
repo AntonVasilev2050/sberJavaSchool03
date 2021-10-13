@@ -1,4 +1,4 @@
-package main.java.Theme06ModuleBuildToolsTesting.Task04;
+package Theme06ModuleBuildToolsTesting.Task04;
 
 public class Cat {
     private String name;
