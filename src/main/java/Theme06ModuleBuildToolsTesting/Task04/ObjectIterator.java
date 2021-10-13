@@ -1,9 +1,6 @@
 package Theme06ModuleBuildToolsTesting.Task04;
 
-import jdk.nashorn.internal.ir.CatchNode;
-
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class ObjectIterator implements Iterator<Object>{
     private final Object[] objects;
