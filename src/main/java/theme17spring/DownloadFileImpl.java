@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class DownloadFileImpl implements DownloadFile {
-    private static int count;
+    private static  int count;
     private static byte[] buffer;
     private static URL url;
     private static BufferedInputStream bis;
@@ -41,7 +41,7 @@ public class DownloadFileImpl implements DownloadFile {
 
     @Override
     public void download(String urlStr, String fullPathToFile, int rateLimit) {
-        int slotCount = 0;
+        int  slotCount = 0;
         try {
             url = new URL(urlStr);
             bis = new BufferedInputStream(url.openStream());

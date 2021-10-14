@@ -5,22 +5,24 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class FileDownloader {
-    ReadUrlStrFromFile readUrlStrFromFile = new ReadUrlStrFromFileImpl();
-    DownloadFileImpl downloadFileImp = new DownloadFileImpl();
     String path = "C:\\Users\\USER\\OneDrive\\BBdocuments\\IdeaProjects\\sberJavaSchool02\\resources\\";
     String fileWithUrls = "src\\main\\java\\theme17spring\\weblinks.txt";
-    String fullPathToFile;
+    int rateLimit = 300; //Kb per sek
 
     public void start() {
         //Read list of urls from file
+        ReadUrlStrFromFile readUrlStrFromFile = new ReadUrlStrFromFileImpl();
         List<String> list = readUrlStrFromFile.read(fileWithUrls);
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-        for (String urlStr: list){
-            executorService.submit(new DownloadTask(urlStr, path, 20));
+        ExecutorService executorService = Executors.newFixedThreadPool(1);
+        for (String urlStr : list) {
+            executorService.submit(new DownloadTask(urlStr, path, rateLimit));
         }
+        executorService.shutdown();
     }
 
-//    Create empty files in destination folder
-//    Download files
-
+    public static void main(String[] args) throws InterruptedException {
+        FileDownloader fileDownloader = new FileDownloader();
+        fileDownloader.start();
+    }
 }
+

@@ -1,11 +1,11 @@
 package theme17spring;
 
 public class DownloadTask implements Runnable{
-    private final String urlStr;
-    private final String path;
-    private final int rateLimit;
+    private String urlStr; // web link of the file to download
+    private String path; //path to the folder where we save downloaded files
+    private int rateLimit; // kB per sek
 
-    public DownloadTask(String urlStr, String path,  int rateLimit) {
+    public DownloadTask(String urlStr, String path, int rateLimit) {
         this.urlStr = urlStr;
         this.path = path;
         this.rateLimit = rateLimit;
