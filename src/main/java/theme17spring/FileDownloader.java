@@ -1,6 +1,8 @@
 package theme17spring;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class FileDownloader {
     ReadUrlStrFromFile readUrlStrFromFile = new ReadUrlStrFromFileImpl();
@@ -12,6 +14,10 @@ public class FileDownloader {
     public void start() {
         //Read list of urls from file
         List<String> list = readUrlStrFromFile.read(fileWithUrls);
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        for (String urlStr: list){
+            executorService.submit(new DownloadTask(urlStr, path, 20));
+        }
     }
 
 //    Create empty files in destination folder
