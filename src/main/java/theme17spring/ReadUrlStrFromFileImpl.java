@@ -18,7 +18,6 @@ public class ReadUrlStrFromFileImpl implements ReadUrlStrFromFile {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
         return list;
     }
 }
