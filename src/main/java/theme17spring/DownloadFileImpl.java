@@ -7,25 +7,24 @@ import java.io.IOException;
 import java.net.URL;
 
 public class DownloadFileImpl implements DownloadFile {
-    private static  int count;
+    private int count;
     private static byte[] buffer;
-    private static URL url;
-    private static BufferedInputStream bis;
-    private static FileOutputStream fos;
-    private static int n;
+    private URL url;
+    private BufferedInputStream bis;
+    private FileOutputStream fos;
+    private int n;
 
     @Override
     public String createDestinationFile(String path, String urlStr) {
         int lastSlashIndex = 0;
         for (int i = urlStr.length() - 1; i >= 0; i--) {
             char c = urlStr.charAt(i);
-            if(c == '/'){
+            if (c == '/') {
                 lastSlashIndex = i;
                 break;
             }
         }
-        String fileName = urlStr.substring(lastSlashIndex +1);
-
+        String fileName = urlStr.substring(lastSlashIndex + 1);
 //      Create File
         try {
             File file = new File(path);
@@ -40,8 +39,8 @@ public class DownloadFileImpl implements DownloadFile {
     }
 
     @Override
-    public void download(String urlStr, String fullPathToFile, int rateLimit) {
-        int  slotCount = 0;
+    public void download(String urlStr, String fullPathToFile, int rateLimit){
+        int slotCount = 0;
         try {
             url = new URL(urlStr);
             bis = new BufferedInputStream(url.openStream());
@@ -58,11 +57,9 @@ public class DownloadFileImpl implements DownloadFile {
             } while (finished != -1);
             fos.close();
             bis.close();
-
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
     private int downloadOneSlot() throws IOException, InterruptedException {

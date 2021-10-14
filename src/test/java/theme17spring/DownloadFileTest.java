@@ -2,6 +2,8 @@ package theme17spring;
 
 import org.junit.Test;
 
+import java.io.IOException;
+
 public class DownloadFileTest {
     DownloadFileImpl downloadFileImp = new DownloadFileImpl();
     String path = "C:\\Users\\USER\\OneDrive\\BBdocuments\\IdeaProjects\\sberJavaSchool02\\resources\\";
@@ -15,7 +17,7 @@ public class DownloadFileTest {
     }
 
     @Test
-    public void downloadOneFile() {
+    public void downloadOneFile()  {
         downloadFileImp.download(urlStr, downloadFileImp.createDestinationFile(path, urlStr), 15);
     }
 
