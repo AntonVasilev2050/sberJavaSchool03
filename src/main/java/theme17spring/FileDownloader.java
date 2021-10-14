@@ -9,10 +9,10 @@ public class FileDownloader {
     String fileWithUrls = "src\\main\\java\\theme17spring\\weblinks.txt";
     String fullPathToFile;
 
-    public void start(){
-        List<String > list = readUrlStrFromFile.read(fileWithUrls);
+    public void start() {
+        //Read list of urls from file
+        List<String> list = readUrlStrFromFile.read(fileWithUrls);
     }
-    //Read list of urls from file
 
 //    Create empty files in destination folder
 //    Download files
