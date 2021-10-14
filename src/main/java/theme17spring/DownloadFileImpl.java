@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 
-public class DownloadFileImp implements DownloadFile {
+public class DownloadFileImpl implements DownloadFile {
     private static int count;
     private static byte[] buffer;
     private static URL url;
@@ -41,6 +41,7 @@ public class DownloadFileImp implements DownloadFile {
 
     @Override
     public void download(String urlStr, String fullPathToFile, int rateLimit) {
+        int slotCount = 0;
         try {
             url = new URL(urlStr);
             bis = new BufferedInputStream(url.openStream());
@@ -52,6 +53,8 @@ public class DownloadFileImp implements DownloadFile {
             do {
                 n = rateLimit;
                 finished = downloadOneSlot();
+                slotCount++;
+                System.out.println(slotCount + " slot downloaded (" + rateLimit + "Kb)");
             } while (finished != -1);
             fos.close();
             bis.close();
@@ -73,7 +76,7 @@ public class DownloadFileImp implements DownloadFile {
         if (timeToDownload < 1000) {
             Thread.sleep(1000 - timeToDownload);
         }
-        System.out.println("slot downloaded");
+
         return count;
     }
 }

@@ -3,9 +3,9 @@ package theme17spring;
 import org.junit.Test;
 
 public class DownloadFileTest {
-    DownloadFileImp downloadFileImp = new DownloadFileImp();
+    DownloadFileImpl downloadFileImp = new DownloadFileImpl();
     String path = "C:\\Users\\USER\\OneDrive\\BBdocuments\\IdeaProjects\\sberJavaSchool02\\resources\\";
-    String urlStr = "https://uprostim.com/wp-content/uploads/2021/05/image005-8.jpg";
+    String urlStr = "https://c.stocksy.com/a/s0V000/z9/119218.jpg";
     String fullPathToFile;
 
     @Test
