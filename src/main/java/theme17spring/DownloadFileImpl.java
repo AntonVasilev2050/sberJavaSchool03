@@ -12,7 +12,7 @@ public class DownloadFileImpl implements DownloadFile {
     private URL url;
     private BufferedInputStream bis;
     private FileOutputStream fos;
-    private int n;
+    private int n = 0;
 
     @Override
     public String createDestinationFile(String path, String urlStr) {
