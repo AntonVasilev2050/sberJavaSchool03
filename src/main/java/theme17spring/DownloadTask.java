@@ -15,7 +15,6 @@ public class DownloadTask implements Runnable{
 
     @Override
     public void run() {
-//        DownloadFile downloadFile = new DownloadFileImpl();
         String fullPathToFile = downloadFile.createDestinationFile(path, urlStr);
         downloadFile.download(urlStr, fullPathToFile, rateLimit);
     }

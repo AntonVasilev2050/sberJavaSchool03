@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class DownloadFileImpl implements DownloadFile {
     private int count;
-    private static byte[] buffer;
+    private byte[] buffer;
     private URL url;
     private BufferedInputStream bis;
     private FileOutputStream fos;
